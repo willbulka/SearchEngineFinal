@@ -5,6 +5,7 @@ The following are the parts of the final search engine according to:
     http://weblog.cs.uiowa.edu/cs2820f14/Sixth%20Project%20Assignment
     
 We have agreed to break this up into the following parts:
+
     Part 1.   Chong & Will
     Part 2.   Joshua Kinney
     Part 3.   Tanner Woody
