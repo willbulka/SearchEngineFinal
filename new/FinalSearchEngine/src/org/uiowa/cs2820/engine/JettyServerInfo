@@ -1,0 +1,81 @@
+Jetty in Java
+Jetty has an API in java
+
+Lots to read about online here. Still going through and figuring out how Jetty Works in Java etc. A few simple examples I read about are below descriptions based off readings. 
+
+
+Embedding Jetty in Java 
+1. Create a server instance
+2. Add/Configure Connections
+  - Jetty suggests explicit instantiation of one or more connectors for 1 server instance. 
+3. Add/Configure a Handler...or multiple handlers 
+  - Handlers are set on the server and 
+    A. Modify the HTTP request
+    B. Generate the complete HTTP response.
+    C. Calls other handlers
+    - Parameters passed to the handle method
+    A. Target - Target of request, either a URI or a name from a dispatcher
+    B. Base Request - The always unwrapped Jetty Mutable Objects
+    C. Request - Immutable object, could be wrapped by a filter or servlet
+    D. Response - the response, may be wrapped by a filter or servlet. 
+    
+4. Start the server
+
+
+Quick Examples from Jetty's Site 
+
+Simple Example of Jetty Server 
+
+package org.eclipse.jetty.embedded;
+ 
+import org.eclipse.jetty.server.Server;
+ 
+/**
+ * The simplest possible Jetty server.
+ */
+public class SimplestServer
+{
+    public static void main( String[] args ) throws Exception
+    {
+        Server server = new Server(8080); ###creates new server interface
+        server.start();  ### starts server
+        server.dumpStdErr(); 
+        server.join();  ###joins server
+    }
+}
+
+
+Example of Embedded Connectors
+
+package org.eclipse.jetty.embedded;
+ 
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
+ 
+/**
+ * A Jetty server with one connectors.
+ */
+public class OneConnector
+{
+    public static void main( String[] args ) throws Exception
+    {
+        // The Server
+        Server server = new Server();
+ 
+        // HTTP connector
+        ServerConnector http = new ServerConnector(server);
+        http.setHost("localhost");
+        http.setPort(8080);
+        http.setIdleTimeout(30000);
+ 
+        // Set the connector
+        server.addConnector(http);
+ 
+        // Set a handler
+        server.setHandler(new HelloHandler());
+ 
+        // Start the server
+        server.start();
+        server.join();
+    }
+}
