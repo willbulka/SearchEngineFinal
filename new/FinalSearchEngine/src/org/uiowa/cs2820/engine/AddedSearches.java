@@ -15,7 +15,7 @@ public class AddedSearches {
 			if(name0.compareTo(name1) == 0){
 				String value0 = (String) f.getFieldValue();
 				String value1 = (String) n.getFieldValue();
-				if(value0.compareTo(value1) == 1){
+				if(value0.compareTo(value1) < 0){
 					s.add(n.toString());
 				}
 			}
@@ -34,7 +34,7 @@ public class AddedSearches {
 			if(name0.compareTo(name1) == 0){
 				String value0 = (String) f.getFieldValue();
 				String value1 = (String) n.getFieldValue();
-				if(value0.compareTo(value1) == -1){
+				if(value0.compareTo(value1) > 0){
 					s.add(n.toString());
 				}
 			}
@@ -97,6 +97,38 @@ public class AddedSearches {
 		}			
 		return s;
 		
+	}
+	
+	public static ArrayList<String> valueSearch(Field f, ArrayList<Field> D){
+		ArrayList<String> s = new ArrayList<String>();
+
+		for(Field n : D){
+			
+			//Field dataField = n.getKey();
+			String value0 = (String) f.getFieldValue();
+			String value1 = (String) n.getFieldValue();
+		
+			if(value0.compareTo(value1) == 0){
+				s.add(n.toString());
+			}
+		}			
+		return s;
+	}
+	
+	public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
+		ArrayList<String> s = new ArrayList<String>();
+
+		for(Field n : D){
+			
+			//Field dataField = n.getKey();
+			String name0 = f.getFieldName();
+			String name1 = n.getFieldName();
+			
+			if(name0.compareTo(name1) == 0){
+				s.add(n.toString());
+			}
+		}			
+		return s;
 	}
 
 }
