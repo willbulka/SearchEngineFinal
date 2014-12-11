@@ -130,11 +130,14 @@ public class AddedSearches {
 		}			
 		return s;
 	}
-	public static ArrayList<Field> convert(ArrayList<Node> N){
+	//This method is used to convert a Database into a Arraylist of fields 
+	public static ArrayList<Field> convert(Database D){
 		ArrayList<Field> F = new ArrayList<Field>();
+		ArrayList<Node> N = D.fetchAll();
 		for(Node n : N){
 			F.add(n.getKey());
 		}
+		Collections.reverse(F);
 		return F;
 	}
 }
