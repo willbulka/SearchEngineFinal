@@ -1,15 +1,15 @@
 package org.uiowa.cs2820.engine.server;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserInput {
 	Scanner sc = new Scanner(System.in);
 	String term;
 	String userInp;
-	boolean exit;
+	boolean exit = false;
 	
-	public UserInput() {
-		exit = false;
+	public UserInput() {		
 	}
 	
 	public void search(String word) {
@@ -21,16 +21,23 @@ public class UserInput {
 		System.out.println("Insert Search Term");
 		//System.out.println("Press '/' for more information");
 		userInp = sc.next();
-		while (!exit) {
-			if (userInp == "//") {
+		userInp = sc.nextLine();
+		while (sc.hasNext() & !exit) {
+			userInp = sc.next();
+			userInp = sc.nextLine();
+			if (userInp.equals("?")) {
 				// show available option
 				options();
 			}
-		
+			else if (userInp.equals("exit")) {
+				exit = true;
+			}
 			else { 
 				search(userInp); 
 				}
 		}
+		sc.close();
+		System.out.println("The End");
 	}
 	
 	public void options() {
@@ -39,6 +46,11 @@ public class UserInput {
 		// if exit
 		// if show more result
 		// etc
+	}
+	
+	public static void main(String[] args) throws IOException {
+		UserInput x = new UserInput();
+		x.input();
 	}
 	
 }
