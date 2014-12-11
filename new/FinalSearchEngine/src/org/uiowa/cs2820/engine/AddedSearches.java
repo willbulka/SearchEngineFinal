@@ -130,5 +130,11 @@ public class AddedSearches {
 		}			
 		return s;
 	}
-
+	public static ArrayList<Field> convert(ArrayList<Node> N){
+		ArrayList<Field> F = new ArrayList<Field>();
+		for(Node n : N){
+			F.add(n.getKey());
+		}
+		return F;
+	}
 }
