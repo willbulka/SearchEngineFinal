@@ -3,7 +3,7 @@
 */
 package org.uiowa.cs2820.engine;
 
-import java.util.Iterator; 
+import java.util.Iterator; //Why not import cCollection instead? Will bring up `issue` with this!
 
 public class IteratorClass {
 
@@ -21,7 +21,14 @@ public class IteratorClass {
 	}
 	
 	public static void next(){
-		//TODO
+		/*TODO:
+		    next() will do the following:
+		      1. Will return the next element in the list
+		      2. Will call hasNext() first to see if there is anything even to return!
+		      3. This is a simple call to `Collection.next()`!
+		    
+		*/
+		
 	}
 	
 	public static void showAll(){
