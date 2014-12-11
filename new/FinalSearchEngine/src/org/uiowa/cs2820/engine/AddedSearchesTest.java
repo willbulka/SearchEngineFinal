@@ -290,9 +290,33 @@ public class AddedSearchesTest {
 		
 	}
 	
-	
-	//All methods are to be included in the AddedSearches class.
-	//In all roughly 7 tests are planned for code coverage. 
-	//This is by no means a definite number though.
-
+	//test for a convert function to convert a database to a linked list of fields
+	@Test
+	public void convertTest(){
+		Database D = new LinearDiskDatabase();
+		
+		Field f0 = new Field("First", "As");
+		Field f1 = new Field("Second", "After");
+		
+		Field A0 = new Field("First", "As");
+		Field A1 = new Field("Second", "After");
+		
+		D.store(f0, ".....");
+		D.store(f1, "////");
+		
+		ArrayList<Field> F = AddedSearches.convert(D);
+		
+		ArrayList<Field> answer = new ArrayList<Field>();
+		
+		answer.add(A0);
+		answer.add(A1);
+		
+		
+		for(int i = 0; i < answer.size(); i++){
+			assertEquals(F.get(i).toString(), answer.get(i).toString());
+		}
+		
+		
+	}
+		
 }
