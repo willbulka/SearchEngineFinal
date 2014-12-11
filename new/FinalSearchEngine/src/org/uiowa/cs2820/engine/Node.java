@@ -97,6 +97,14 @@ public class Node implements Item, Serializable {
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
+    
+    public static ArrayList<Node> getAll(){
+	  setup();
+	  Field f = new Field("blank", "blank");
+	  SearchField S = new SearchField(f);
+	  D.traverseAll(S);
+	  return S.n;
+  }
 
   // save Node to DiskSpace - invoke after changes to Node
   public void save() {
