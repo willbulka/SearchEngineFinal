@@ -32,19 +32,45 @@ public class IteratorClass {
 	}
 	
 	public static void showAll(){
-		//TODO
+		/*TODO:
+		    Current Issues:
+		      1. Does showAll() display, or does it simply return?
+		    showAll() will do the following:
+		      1. Display/return all of the potential search successes.
+		*/   
 	}
 	
 	public static void remove(){
-		//TODO
+		/*TODO:
+		    1. remove() is a built in function from Collection
+		    remove() does the following:
+		       1. removes SOMETHING from SOMETHING ELSE.
+		    remove() could `remove` an Object to the search
+		      if remove() does do the above, then:
+		        a new search has to be made; everything else cleaned and refreshed
+		*/
 	}
 	
 	public static void add(){
-		//TODO
+		/*TODO:
+		    1. add() is a built in function from Collection
+		    add() does the following:
+		       1. adds SOMETHING to SOMETHING ELSE.
+		    add() could `add` an Object to the search
+		      if add() does do the above, then:
+		        a new search has to be made; everything else cleaned and refreshed
+		        
+		    ISSUE: Lets have an update_dude!
+		*/
 	}
 	
 	public static void hasPrevious(){
-		//NOT SURE IF NEEDED
+		/*NOT SURE IF NEEDED
+		    returns boolean of any previous results
+		    However, if we are somwhere with next and data_struct, then obvi there was a previuos.
+		    
+		    Not necessary?
+		*/
 	}
 	
 	
