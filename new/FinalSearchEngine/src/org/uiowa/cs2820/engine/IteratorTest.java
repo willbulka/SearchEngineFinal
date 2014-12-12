@@ -29,26 +29,8 @@ public class IteratorTest {
 	}
 	
 	@Test
-	public void test3() {
-		//TODO
-		//Test for add() method.
-	}
-	
-	@Test
-	public void test4() {
-		//TODO
-		//Test for remove() method.
-	}
-	
-	@Test
 	public void test5() {
 		//TODO
 		//Test for showAll() method.
 	}
-	
-	@Test
-	public void test6() {
-		//IF NEEDED
-		//Test for hasPrevious() method.
-	}	
 }

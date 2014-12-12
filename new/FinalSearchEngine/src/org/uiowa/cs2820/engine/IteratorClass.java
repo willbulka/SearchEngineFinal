@@ -1,6 +1,7 @@
 /*
  Tim Miller (Problem Five)
 */
+
 package org.uiowa.cs2820.engine;
 
 import java.util.Iterator; 
@@ -32,23 +33,8 @@ public class IteratorClass implements IteratorInterface {
 }
 
 	public void showAll(){
-				
-		/*TODO:
-		    Current Issues:
-		      1. Does showAll() display, or does it simply return?
-		    showAll() will do the following:
-		      1. Display/return all of the potential search successes.
-		*/   
-	}
-
-	public void hasPrevious(){
-		/*NOT SURE IF NEEDED
-		    returns boolean of any previous results
-		    However, if we are somwhere with next and data_struct, then obvi there was a previuos.
-		    
-		    Not necessary?
-		*/
-	}
+			//TODO
 	
+	}
 	
 }
