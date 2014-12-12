@@ -10,9 +10,18 @@ LOTS TODO! Right now, the best approach is to take a look at:
 
 From here, we can see 
   1.  What the best way to search through the Databases are.
-  2.  blah blah blah
+  2.  How modified searches look and work.
   
-  Will think about 'blah blah blah' and more later! Want to add this first!
+  Add simple documentation and pseudocode for what should be implemented.
+  Right now, if we take a look at the course website, we see:
+    "
+      Allow for combinations of searches. As an example, suppose someone 
+      wanted to know what are all the identifiers (like filenames or 
+      document IDs) that have both Field equal ("Year","2005") and Field 
+      less-than ("Feature","swipe") in the database. Combinations could 
+      use conjunction (and) as well as disjunction (or) operators to 
+      build up searches.
+    "
 
 */
 public class CombinationSearches{
