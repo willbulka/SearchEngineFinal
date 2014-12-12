@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 public class AddedSearches {
 	
+	ArrayList<String> s = new ArrayList<String>();
+	
 	//GreaterThanSearch implemented here
-	public static ArrayList<String> greaterThanSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> greaterThanSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 		for(Field n : D){
 			//Field dataField = n.getKey();
 			String name0 = f.getFieldName();
@@ -25,8 +27,8 @@ public class AddedSearches {
 	}
 	
 	//LessThanSearch implemented here
-	public static ArrayList<String> lessThanSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> lessThanSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 		for(Field n : D){
 			//Field dataField = n.getKey();
 			String name0 = f.getFieldName();
@@ -43,8 +45,8 @@ public class AddedSearches {
 		
 	}
 	
-	public static ArrayList<String> prefixSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> prefixSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 
 		for(Field n : D){
 			
@@ -76,8 +78,8 @@ public class AddedSearches {
 		
 	}
 	
-	public static ArrayList<String> containsSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> containsSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 
 		for(Field n : D){
 			
@@ -99,8 +101,8 @@ public class AddedSearches {
 		
 	}
 	
-	public static ArrayList<String> valueSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> valueSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 
 		for(Field n : D){
 			
@@ -115,8 +117,8 @@ public class AddedSearches {
 		return s;
 	}
 	
-	public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
-		ArrayList<String> s = new ArrayList<String>();
+	public ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
+		//ArrayList<String> s = new ArrayList<String>();
 
 		for(Field n : D){
 			
@@ -131,7 +133,7 @@ public class AddedSearches {
 		return s;
 	}
 	//This method is used to convert a Database into a Arraylist of fields 
-	public static ArrayList<Field> convert(Database D){
+	public ArrayList<Field> convert(Database D){
 		ArrayList<Field> F = new ArrayList<Field>();
 		ArrayList<Node> N = D.fetchAll();
 		for(Node n : N){
