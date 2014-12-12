@@ -27,7 +27,7 @@ From here, we can see
 public class CombinationSearches{
   ArrayList<String> s = new ArrayList<String>();
 
-  public static ArrayList<String> andSearch(Field f1, Field f2, ArrayList<Field> D){
+  public ArrayList<String> andSearch(Field f1, Field f2, ArrayList<Field> D){
   	/* How this works: 
   	        Should return search that contain BOTH f1 AND f2
   	        Going to do this by iterating through the database and
@@ -46,7 +46,7 @@ public class CombinationSearches{
   	return s;
   }
   
-  public static ArrayList<String> orSearch(Field f1, Field f2, ArrayList<Field> D){
+  public ArrayList<String> orSearch(Field f1, Field f2, ArrayList<Field> D){
   	/* How this works:
   	        Should return search that contain EITHER f1 OR f2
   	        Going to do this by iterating through the database and
@@ -66,7 +66,7 @@ public class CombinationSearches{
   	return s;
   }
 
-  public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
+  public ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
 		ArrayList<String> s = new ArrayList<String>();
 
 		for(Field n : D){
