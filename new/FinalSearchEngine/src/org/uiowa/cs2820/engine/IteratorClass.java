@@ -39,6 +39,9 @@ public class IteratorClass<E> implements IteratorInterface {
 		if(!a.isEmpty()){
 			a.iterator();
 		}
+		else{
+			return null;
+		}
 		return I;
 	}
 }
