@@ -25,13 +25,38 @@ From here, we can see
 
 */
 public class CombinationSearches{
+  ArrayList<String> s = new ArrayList<String>();
 
-  public static ArrayList<String> andSearch(Field f, ArrayList<Field> D){
-  	// TODO: Add stuff to TODO
+  public static ArrayList<String> andSearch(Field f1, Field f2, ArrayList<Field> D){
+  	/* TODO: 
+  	        Should return search that contain BOTH f1 AND f2
+  	        Going to do this by iterating through the database and
+  	          returning searches that are similar to both.
+  	*/
+  	String name1 = f1.getFieldName();
+  	String name2 = f2.getFieldName();
+  	for(Field n : D){
+  		String name3 = n.getFieldName();
+  	}
   }
   
-  public static ArrayList<String> orSearch(Field f, ArrayList<Field> D){
-  	// TODO: Add stuff to TODO
+  public static ArrayList<String> orSearch(Field f1, Field f2, ArrayList<Field> D){
+  	/* TODO:
+  	        Should return search that contain EITHER f1 OR f2
+  	        Going to do this by iterating through the database and
+  	          returning searches that are similar to both.
+  	*/
+  	String name1 = f1.getFieldName();
+  	String name2 = f2.getFieldName();
+  	for(Field n : D){
+  		String name3 = n.getFieldName();
+  		if(name1.compareTo(name3) == 0){
+  			s.add(n.toString());
+  		}
+  		if(name2.compareTo(name3) == 0){
+  			s.add(n.toString()); //BUG: Need to check if this is in `s` so we don't add dup.s.
+  		}
+  	}
   }
 
   public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
