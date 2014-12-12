@@ -15,5 +15,10 @@ public class LinearDiskDatabase implements Database {
 	    if (n == null) return new String[0];
 	    return Identifier.getAllIds(n.identlist);
 	    }
+	    
+	 public ArrayList<Node> fetchAll(){
+		ArrayList<Node> n = Node.getAll();
+		return n;		  
+	  }
 	  }
 		  

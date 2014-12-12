@@ -9,4 +9,5 @@ public interface Traverser {
 	  // through the linked list should continue
 	  // (false means quit the traversal)
 	  public boolean process(Item I); 
+	  public boolean processAll(Item I);
 	  }

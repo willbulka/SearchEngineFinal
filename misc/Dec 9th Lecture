@@ -1,0 +1,26 @@
+/**
+ * Lecture: Dec 9th - more insight on Server by Prof. Herman
+ * 
+ * XML, HTML - "cousins" (??)ML
+ * JSON
+ * 
+ * Browser
+ * 	|
+ * 	v
+ * Client	|	Servers	|	Parser	|	Combiner	|	Quevies
+ * 		----|->			|			|				|	(compare, prefix, etc)
+ * 			|		----|->			|				|
+ * 			|		<---|-	AST		|				|
+ * 			|		----|-----------|->				|
+ * 			|			|		----|->				|
+ * 			|			|		----|->				|
+ * 			|			|		----|->				|
+ * 			|		<---|-----------|---------------|----
+ * 		<---|----		|			|				|
+ *
+ *  
+ * AST - Access Syntax Tree  (OR, AND, <, >, etc)
+ * 	
+ */
+
+
