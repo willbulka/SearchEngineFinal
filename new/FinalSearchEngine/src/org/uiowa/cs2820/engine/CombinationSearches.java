@@ -28,7 +28,7 @@ public class CombinationSearches{
   ArrayList<String> s = new ArrayList<String>();
 
   public static ArrayList<String> andSearch(Field f1, Field f2, ArrayList<Field> D){
-  	/* TODO: 
+  	/* How this works: 
   	        Should return search that contain BOTH f1 AND f2
   	        Going to do this by iterating through the database and
   	          returning searches that are similar to both.
@@ -37,11 +37,17 @@ public class CombinationSearches{
   	String name2 = f2.getFieldName();
   	for(Field n : D){
   		String name3 = n.getFieldName();
+  		if(name1.compareTo(name3) == 0){
+  			if (name2.compareTo(name3) == 0){ //BUG: Not sure if this logic is right!
+  				s.add(n.toString();
+  			}
+  		}
   	}
+  	return s;
   }
   
   public static ArrayList<String> orSearch(Field f1, Field f2, ArrayList<Field> D){
-  	/* TODO:
+  	/* How this works:
   	        Should return search that contain EITHER f1 OR f2
   	        Going to do this by iterating through the database and
   	          returning searches that are similar to both.
@@ -57,6 +63,7 @@ public class CombinationSearches{
   			s.add(n.toString()); //BUG: Need to check if this is in `s` so we don't add dup.s.
   		}
   	}
+  	return s;
   }
 
   public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
