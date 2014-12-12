@@ -26,6 +26,14 @@ From here, we can see
 */
 public class CombinationSearches{
 
+  public static ArrayList<String> andSearch(Field f, ArrayList<Field> D){
+  	// TODO: Add stuff to TODO
+  }
+  
+  public static ArrayList<String> orSearch(Field f, ArrayList<Field> D){
+  	// TODO: Add stuff to TODO
+  }
+
   public static ArrayList<String> generalSearch(Field f, ArrayList<Field> D){
 		ArrayList<String> s = new ArrayList<String>();
 
