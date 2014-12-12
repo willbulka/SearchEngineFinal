@@ -1,5 +1,5 @@
 /*
- Tim Miller (Problem Five)
+ Tim Miller (Iterator - Problem Five)
 */
 
 package org.uiowa.cs2820.engine;
@@ -7,10 +7,11 @@ package org.uiowa.cs2820.engine;
 import java.util.Iterator; 
 import java.util.ArrayList;
 
-public class IteratorClass implements IteratorInterface {
+public class IteratorClass<E> implements IteratorInterface {
 
-		ArrayList a = new ArrayList();
-		Iterator I = a.iterator();
+	ArrayList a = new ArrayList();
+	Iterator<E> I = a.iterator();
+	
 	
 	public boolean hasNext(){
 		if (I.hasNext()) {
@@ -20,7 +21,8 @@ public class IteratorClass implements IteratorInterface {
 		   return false;
 		}
 	}
-					
+	
+	
 	public Object next(){
 		AddedSearches x = new AddedSearches();
 		a = x.s;
@@ -32,9 +34,11 @@ public class IteratorClass implements IteratorInterface {
 	}
 }
 
-	public void showAll(){
-			//TODO
-	
+	//returns the results as an iterator
+	public Iterator<E> showAll(){
+		if(!a.isEmpty()){
+			a.iterator();
+		}
+		return I;
 	}
-	
 }

@@ -6,31 +6,65 @@ package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class IteratorTest {
 
-	@Before
+	@Test
 	public void test0() {
-		//IF NEEDED
+		//Test for next() method.
+		ArrayList a = new ArrayList();
+		Iterator I = a.iterator();
+		
+		if(I.hasNext()){
+			assertEquals(I.next(), I.next());
+			}
+	}
+	
+	@Test
+	public void test0_1() {
+		//Test for next() method.
+		ArrayList a = new ArrayList();
+		Iterator I = a.iterator();
+		
+		if(!I.hasNext()){
+			assertTrue(I.hasNext() == false);
+			}
 	}
 	
 	@Test
 	public void test1() {
-		//TODO
-		//Test for next() method.
+		//Test for hasNext() method.
+		ArrayList a = new ArrayList();
+		Iterator I = a.iterator();
+		
+		if (I.hasNext() == true){
+			assertEquals(true, true);
+		}
 	}
 	
+	@Test
+	public void test1_1() {
+		//Test for hasNext() method.
+		ArrayList a = new ArrayList();
+		Iterator I = a.iterator();
+		
+		if (!I.hasNext() == true){
+			assertEquals(false, false);
+		}
+	}
+
 	@Test
 	public void test2() {
-		//TODO
-		//Test for hasNext() method.
-	}
-	
-	@Test
-	public void test5() {
-		//TODO
-		//Test for showAll() method.
+		//Test for showAll() method
+		ArrayList a = new ArrayList();
+		if(a.isEmpty()){
+			return; 
+		}
+		assertNull(a);
 	}
 }
