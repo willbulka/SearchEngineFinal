@@ -4,14 +4,19 @@
 package org.uiowa.cs2820.engine;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.Iterator; 
 import java.util.ArrayList;
+=======
+import java.util.Iterator; //Why not import cCollection instead? Will bring up `issue` with this!
+>>>>>>> FETCH_HEAD
 =======
 import java.util.Iterator; //Why not import cCollection instead? Will bring up `issue` with this!
 >>>>>>> FETCH_HEAD
 
 public class IteratorClass implements IteratorInterface {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		ArrayList a = new ArrayList();
 		Iterator I = a.iterator();
@@ -48,6 +53,8 @@ public class IteratorClass implements IteratorInterface {
 
 	public void hasPrevious(){
 =======
+=======
+>>>>>>> FETCH_HEAD
 	public static void hasNext(//Parans){
 		/*TODO:
 		    If this hasNext, we need to decide whether that means that:
@@ -106,6 +113,9 @@ public class IteratorClass implements IteratorInterface {
 	}
 	
 	public static void hasPrevious(){
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 		/*NOT SURE IF NEEDED
 		    returns boolean of any previous results
