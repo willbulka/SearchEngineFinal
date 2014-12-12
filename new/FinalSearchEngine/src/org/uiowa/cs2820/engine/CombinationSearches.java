@@ -38,7 +38,7 @@ public class CombinationSearches{
   	for(Field n : D){
   		String name3 = n.getFieldName();
   		if(name1.compareTo(name3) == 0){
-  			if (name2.compareTo(name3) == 0){ //BUG: Not sure if this logic is right!
+  			if (name2.compareTo(name3) == 0){ 
   				s.add(n.toString();
   			}
   		}
