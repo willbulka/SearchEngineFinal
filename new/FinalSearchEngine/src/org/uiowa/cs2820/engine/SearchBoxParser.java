@@ -2,8 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import java.util.*;
 
-/**
- * Search Box Parser - example 1 
+/** 
  * taken from http://www.javapractices.com/topic/TopicAction.do?Id=87
  */
 
@@ -14,13 +13,16 @@ import java.util.*;
 * double quotes.
 * JDK 7+.
 */
+
+/**
+ *  Modified by UIOWA OO Team 8
+ *  search(String SearchText)
+ */
+
 public final class SearchBoxParser {
 
   public static void main(String... aArguments) {
-    SearchBoxParser parser = new SearchBoxParser("mars venus \"milky way\" sun");
-    Set<String> tokens = parser.parseSearchText();
-    //display the tokens
-    System.out.println(tokens);
+	 
   }
 
   /**
@@ -31,9 +33,41 @@ public final class SearchBoxParser {
     if (aSearchText == null) {
       throw new IllegalArgumentException("Search Text cannot be null.");
     }
-    fSearchText = aSearchText;
+    fSearchText = aSearchText.replaceAll("[^A-Za-z0-9 ]", "").toString();
   }
-
+  
+  /** Calling Search methods from AddedSearches
+   *  determine the input from user
+   *  then call the addedsearches to search 
+   */
+  
+  public List search(String SearchText){
+	  SearchBoxParser parser = new SearchBoxParser(SearchText);
+	  Set<String> tokens = parser.parseSearchText();
+	  List<String> searches = new ArrayList<String>();
+	  List<String> temp = new ArrayList(tokens);
+	  for (int i = 1; i+3 <= temp.size() ; i = i + 3) {
+		  searches.add(getSearch(i, temp).toString());
+	  }
+	return searches;
+  }
+  
+  public ArrayList getSearch(int i, List<String> temp) {	  
+	  String method = temp.get(i);
+	  Field f = new Field (temp.get(i+1), temp.get(i+2));
+	  AddedSearches s = new AddedSearches();
+	  ArrayList<String> searching = new ArrayList<String>();
+	  		if (method.equals("greater")) 	 { searching = s.greaterThanSearch(f, null);}
+	  		else if (method.equals("less"))	 { searching = s.lessThanSearch(f, null); }
+	  		else if (method.equals("prefix"))  { searching = s.prefixSearch(f, null);	}
+	  		else if (method.equals("contains")){ searching = s.containsSearch(f, null);	}
+			else if (method.equals("suffix"))  { searching = s.valueSearch(f, null);	}			
+			else if (method.equals("equals"))  { searching = s.generalSearch(f, null);	}
+	  
+	  return searching;
+	}
+  
+  
   /**
   * Parse the user's search box input into a Set of String tokens.
   *
@@ -63,7 +97,9 @@ public final class SearchBoxParser {
     }
     return result;
   }
-
+  
+  
+  
   // PRIVATE 
   private String fSearchText;
   private static final Set<String> fCOMMON_WORDS = new LinkedHashSet<>();
