@@ -5,9 +5,6 @@ import java.util.ArrayList;
 
 /*
 
-LOTS TODO! Right now, the best approach is to take a look at:
-    https://github.com/willbulka/SearchEngineFinal/blob/master/new/FinalSearchEngine/src/org/uiowa/cs2820/engine/AddedSearches.java
-
 From here, we can see 
   1.  What the best way to search through the Databases are.
   2.  How modified searches look and work.
