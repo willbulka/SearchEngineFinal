@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Happy Search</title>
+    <meta name="description" content="Search me." />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300' rel='stylesheet' type='text/css'>
+    <style>
+       html {
+           overflow-y: scroll;
+           padding-top: 17mm;
+       }
+       
+       body {
+           background-color: #f7f4e1;
+       
+       
+           font-family: 'Source Sans Pro', serif;
+           font-style: normal;
+           font-weight: 300;
+           font-size: 13pt;
+           line-height: 128%;
+           margin: 0;
+           padding: 0;
+       }
+       
+       a {
+           text-decoration: none;
+           color:#614404;
+           font-weight: 400;
+           font-family: 'Source Sans Pro', serif;
+       }
+       a:link { color:#614404; }    /* unvisited link */
+       a:visited { color:#614404; } /* visited link */
+       a:hover 
+       {
+           color:inherit;
+           text-decoration: underline;
+       }
+       a:active {
+           color:#4d3603;
+       }
+       
+       nav#tabio {
+           font-family: 'Source Sans Pro', serif;
+           position:fixed;
+           top: 0;
+           left: 298mm;
+           right:0;
+           bottom: 0;
+           min-width: 20mm;
+       /*    border-left: solid 1px #d9cca5; */
+           padding-right: 5mm;
+           padding-left: 4mm;
+           padding-top: 17.5mm;
+           z-index: 5;
+           background-color: transparent;
+       }
+       
+       nav#tabio ul
+       {
+           list-style: none;
+           padding:0;
+           margin:0;
+           width: 100%;
+       }
+       
+       
+       
+       nav#tabio ul > li
+       {
+           padding: 3mm 0 3mm 3.5mm;
+           margin-left: 2mm;
+           border-radius: 12mm 0 0 12mm;
+           border-style: none;
+           width: 100%;
+           background-color: #e3d9b1;
+           white-space: nowrap;
+       }
+       
+       nav#tabio ul > li:hover
+       {
+           border-radius: 12mm;
+           box-shadow: 1mm 1mm 1mm #807185;
+           margin-bottom: 1mm;
+           margin-left: 0;
+           margin-top: -1mm;
+           z-index: 2 !important;
+       }
+       
+       
+       nav#tabio ul > li.example
+       {
+           background-color: #a7ccab !important;
+       }
+       nav#tabio ul > li.example > img
+       {
+           float: left;
+           height: 2em;
+           margin-top: -0.4em;
+           margin-right: 0.3em;
+       }
+       
+       
+       nav#tabio ul > li.help
+       {
+           background-color: #b2d1c8 !important;
+       }
+       
+       
+       footer, header
+       {
+           font-family: 'Source Sans Pro', serif;
+           font-weight: 400;
+           z-index: 2;
+           position:fixed;
+           left: 0;
+           right: 0;
+       }
+       
+       header {
+           top: 0;
+           height: 14mm;
+           border-bottom: 2px solid #fffefc;
+           outline: 2px solid #ab9461;
+           margin: 0;
+           padding: 0;
+       
+       }
+       header > img {
+           height: 14mm;
+           padding: 0;
+           margin: 1.4mm 0 0 1.4mm;
+       }
+       header .rht {
+           float: right;
+           margin-right: 3mm;
+           margin-top: 1.4mm;
+       }
+       
+       header em
+       {
+           font-weight: 600;
+           font-height: 12mm;
+           margin: 1.4mm 0 0 1.4mm;
+       }
+       
+       footer {
+           bottom: 0;
+           text-align: right;
+           padding: 0.5mm;
+           background-color: #998457;
+       }
+       
+       footer img {
+           height: 5mm;
+           margin-bottom: -0.7mm;
+           padding-left: 1.5vmin;
+       }
+       
+       img.rht { margin-right: 1vmin; }
+       
+       img.lft { left: 0; }
+       
+       
+       
+       
+       /* -----------------------------------------------------------------
+             Main Article Content Styling Begins Here
+       */
+       
+       article
+       {
+           margin: 5mm 0 0 15mm;
+           border-collapse: collapse;
+           display: block;
+           width: 156mm;
+           padding-bottom: 10mm;
+       
+       /*
+           -moz-hyphens: auto;
+           hyphens: auto;
+       */
+       
+           -moz-font-feature-settings:"liga", "dlig";
+           -ms-font-feature-settings:"liga", "dlig"; 
+           -o-font-feature-settings:"liga", "dlig"; 
+           -webkit-font-feature-settings:"liga", "dlig"; 
+           font-feature-settings:"liga", "dlig";
+       }
+       
+       article *
+       {
+           padding:0;
+           margin:0;
+       }
+       
+       article h1, article h2, article h3 {
+           font-family: 'Source Sans Pro';
+           font-size: 160%;
+           line-height: 115%;
+           font-weight: 400 !important;
+           letter-spacing: +0em;
+       }
+       
+       article h1 {
+           letter-spacing: +0em;
+       
+       }
+       
+       article h2 {
+           font-size: 135%;
+           margin-top: 0.7em;
+       }
+       article h3 {
+           font-size: 120%;
+           margin-top: 0.7em;
+       }
+       
+       article p, article dl, article p + aside + p {
+           font-size: 15pt;
+           line-height: 130%;
+           margin-top: 0.5em;
+       
+           word-spacing: 0.07em; 
+       }
+       
+       article p + aside {
+          margin-top: 0;
+        
+       }
+       
+       article aside, article dl dt + aside {
+           word-spacing: initial;
+           line-height: 110%;
+           position: absolute;
+           left: 178mm;
+           width: 110mm;
+           margin:0;
+           margin-top: -3mm;
+           padding: 3mm 3.5mm 3mm 3.5mm;
+           border-radius: 2mm;
+           font-size: 110%;
+           font-weight: 300;
+           font-family: 'Source Sans Pro', sans-serif;
+       }
+       article dl dt + aside {
+           line-height: 110% !important;
+           font-size: 100% !important;
+       }
+       
+       
+       
+       article aside.example {
+           background-color: #e9edd5;
+       }
+       
+       article aside.warning {
+           background-color: #ffa8a8;
+       }
+       
+       article aside.alert {
+           background-color: #ffffde;
+       }
+       
+       
+       article aside + p, article h1 + p, article h2 + p, article h3 + p {
+           margin-top: -0.5mm;
+       }
+       
+       
+       article strong {
+           font-family: 'Source Sans Pro', serif;
+           font-weight: 400;
+       }
+       
+       article dl {
+           padding: 0;
+           margin: 0;
+           list-style: none; 
+           line-height: 120%;
+       }
+       
+       
+       
+       article dl > dt {
+           margin: 0.2em 0 0 0;
+       }
+       
+       article dl > dt:before {
+       /*		content: "â€£ "; */
+       }
+       
+       article dl > dd {
+           margin-left: 2em;
+           word-spacing: 0.04em;
+       
+       }
+       
+       section.footnotes
+       {
+           border-top: 1px solid #8d7e60;
+           margin-top: 1.25em;
+       }
+       
+       section.footnotes p {
+           margin-top: 0;
+           
+       }
+       
+       
+       
+       ul.clean
+       {
+           list-style: none;
+           padding:0;
+           margin:0;
+           width: 100%;
+       }
+    </style>
+
+  </head>
+  
+  <body>
+    <header>
+       <em>Happy Search!</em>
+    </header>
+
+    <article>
+      <form method=post>
+      Search Me: <input type=text></input>
+      <input class="buttons" type="submit" value="Happy Search!"> </input>
+      </form>
+    </article>
+    
+    
+    <footer>
+      Copyright Happy Search: 2014
+    </footer>
+  </body>
+</html>
